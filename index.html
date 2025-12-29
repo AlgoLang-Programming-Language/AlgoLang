@@ -34,4 +34,285 @@ print(sum(nums))   // 16
 print(sort(nums))  // [1,2,5,8]</div></div><div class="help-block"><div class="help-block-title">🔧 Operations</div><div class="help-grid"><div class="help-grid-item"><span class="fn">len sum avg</span></div><div class="help-grid-item"><span class="fn">min max</span></div><div class="help-grid-item"><span class="fn">sort reverse</span></div><div class="help-grid-item"><span class="fn">unique contains</span></div></div></div><div class="help-block"><div class="help-block-title">📈 Statistics</div><div class="help-code">print(mean(data))
 print(median(data))
 print(stdev(data))</div></div></div>
-<div class="help-section" id="help-funcs"><div class="help-block"><div class="help-block-title">🧮 Math</div><div class="help-grid"><div class="help-grid-item"><span class="fn">abs sqrt pow</span></div><div class="help-grid-item"><span class="fn">floor ceil round</span></div><div class="help-grid-item"><span class="fn">sin cos tan log</span></div><div class="help-grid-item"><span class="fn">random(a,b)</span></div><div class="help-grid-item"><span class="fn">clamp(v,a,b)</span></div></div></div><div class="help-block"><div class="help-block-title">🔢 Algorithms</div><div class="help-grid"><div class="help-grid-item"><span class="fn">fibonacci(n)</span></div><div class="help-grid-item"><span class="fn">factorial(n)</span></div><div class="help-grid-item"><span class="fn">isPrime(n)</span></div><div class="help-grid-item"><span class="fn">primes(n)</span></div><div class="help-grid-item"><span class="fn">gcd l
+<div class="help-section" id="help-funcs"><div class="help-block"><div class="help-block-title">🧮 Math</div><div class="help-grid"><div class="help-grid-item"><span class="fn">abs sqrt pow</span></div><div class="help-grid-item"><span class="fn">floor ceil round</span></div><div class="help-grid-item"><span class="fn">sin cos tan log</span></div><div class="help-grid-item"><span class="fn">random(a,b)</span></div><div class="help-grid-item"><span class="fn">clamp(v,a,b)</span></div></div></div><div class="help-block"><div class="help-block-title">🔢 Algorithms</div><div class="help-grid"><div class="help-grid-item"><span class="fn">fibonacci(n)</span></div><div class="help-grid-item"><span class="fn">factorial(n)</span></div><div class="help-grid-item"><span class="fn">isPrime(n)</span></div><div class="help-grid-item"><span class="fn">primes(n)</span></div><div class="help-grid-item"><span class="fn">gcd lcm</span></div><div class="help-grid-item"><span class="fn">binary hex</span></div></div></div><div class="help-block"><div class="help-block-title">🔘 Boolean</div><div class="help-code">AND(true, false)  // false
+OR(true, false)   // true
+truthtable("A AND B")</div></div></div>
+<div class="help-section" id="help-ui"><div class="help-block"><div class="help-block-title">🎨 Markup</div><div class="help-code">markup("# Heading")
+markup("**bold** *italic*")</div></div><div class="help-block"><div class="help-block-title">🔘 Components</div><div class="help-code">render(button("Click", "primary"))
+render(badge("New", "success"))
+render(progress(75, 100))
+render(card("Title", "Content"))
+render(alert("Message", "info"))
+render(table(["A","B"],[["1","2"]]))</div></div><div class="help-block"><div class="help-block-title">🎨 Styles</div><div class="help-grid"><div class="help-grid-item"><span class="fn">primary</span></div><div class="help-grid-item"><span class="fn">success</span></div><div class="help-grid-item"><span class="fn">danger</span></div><div class="help-grid-item"><span class="fn">warning</span></div><div class="help-grid-item"><span class="fn">purple pink</span></div><div class="help-grid-item"><span class="fn">large small</span></div></div></div></div>
+<div class="help-section" id="help-interactive"><div class="help-block"><div class="help-block-title">🎮 Interactive</div><div class="help-code">declare btn = button("Click", "primary")
+declare disp = display(0)
+counter score = 0
+on btn { score++ }
+link disp to score</div></div><div class="help-block"><div class="help-block-title">📥 Input</div><div class="help-code">declare inp = input("Name", "n")
+declare btn = button("Go", "primary")
+on btn { print(getInput("n")) }
+let num = toNumber(getInput("n"))</div></div><div class="help-tip">💡 link auto-updates displays!</div></div>
+<div class="help-section" id="help-ref"><div class="help-block"><div class="help-block-title">📚 Reference</div><div class="help-desc"><b>Output:</b> print markup render truthtable</div><div class="help-desc"><b>Math:</b> abs sqrt pow floor ceil round sin cos tan log random clamp min max</div><div class="help-desc"><b>Arrays:</b> len sum avg min max sort reverse unique contains range</div><div class="help-desc"><b>Stats:</b> mean median stdev</div><div class="help-desc"><b>Algorithms:</b> fibonacci factorial isPrime primes gcd lcm binary hex</div><div class="help-desc"><b>Strings:</b> upper lower len reverse</div><div class="help-desc"><b>Boolean:</b> AND OR NOT XOR NAND NOR</div><div class="help-desc"><b>UI:</b> button input display box badge progress card alert table flex grid divider avatar tag</div><div class="help-desc"><b>Interactive:</b> declare on link getInput toNumber</div></div></div>
+</div></div></div></div></div></main>
+<script>
+class A{constructor(){this.reset()}reset(){this.v={};this.c={};this.ac={};this.ct={};this.dc={};this.h={};this.o=[];this.t=[];this.m=[];this.inp={}}AND(a,b){return Boolean(a)&&Boolean(b)}OR(a,b){return Boolean(a)||Boolean(b)}NOT(a){return!Boolean(a)}XOR(a,b){return Boolean(a)!==Boolean(b)}NAND(a,b){return!this.AND(a,b)}NOR(a,b){return!this.OR(a,b)}fib(n){if(n<=1)return n;let a=0,b=1;for(let i=2;i<=n;i++)[a,b]=[b,a+b];return b}fact(n){let r=1;for(let i=2;i<=n;i++)r*=i;return r}isPrime(n){if(n<2)return false;for(let i=2;i<=Math.sqrt(n);i++)if(n%i===0)return false;return true}primes(m){const r=[];for(let i=2;i<=m;i++)if(this.isPrime(i))r.push(i);return r}gcd(a,b){while(b)[a,b]=[b,a%b];return Math.abs(a)}lcm(a,b){return Math.abs(a*b)/this.gcd(a,b)}sort(a){return[...a].sort((x,y)=>x-y)}sum(a){return a.reduce((x,y)=>x+y,0)}avg(a){return a.length?this.sum(a)/a.length:0}min(a){return Array.isArray(a)?Math.min(...a):Math.min(...arguments)}max(a){return Array.isArray(a)?Math.max(...a):Math.max(...arguments)}range(s,e,t=1){const r=[];if(e===undefined){e=s;s=0}for(let i=s;i<e;i+=t)r.push(i);return r}mean(a){return this.avg(a)}median(a){const s=[...a].sort((x,y)=>x-y);const m=Math.floor(s.length/2);return s.length%2?s[m]:(s[m-1]+s[m])/2}stdev(a){const m=this.mean(a);return Math.sqrt(a.reduce((s,x)=>s+Math.pow(x-m,2),0)/a.length)}random(a,b){return Math.floor(Math.random()*(b-a+1))+a}clamp(v,a,b){return Math.max(a,Math.min(b,v))}upper(s){return String(s).toUpperCase()}lower(s){return String(s).toLowerCase()}reverse(a){return Array.isArray(a)?[...a].reverse():String(a).split('').reverse().join('')}contains(a,v){return a.includes(v)}unique(a){return[...new Set(a)]}btn(t,s='primary',id=''){const i=id||'b'+Math.random().toString(36).substr(2,5);return`<button class="algo-btn ${s}" onclick="L.ck('${i}')">${t}</button>`}inp(p='',id=''){const i=id||'i'+Math.random().toString(36).substr(2,5);return`<input class="algo-input" placeholder="${p}" id="${i}" oninput="L.iv('${i}',this.value)">`}disp(v,s='',id=''){const i=id||'d'+Math.random().toString(36).substr(2,5);return`<div class="algo-display ${s}" id="${i}">${v}</div>`}box(c,s=''){return`<div class="algo-box ${s}">${c}</div>`}badge(t,s='primary'){return`<span class="algo-badge ${s}">${t}</span>`}progress(v,m=100,s=''){const p=Math.min(100,Math.max(0,(v/m)*100));return`<div class="algo-progress"><div class="algo-progress-bar ${s}" style="width:${p}%"></div></div>`}card(t,c){return`<div class="algo-card"><div class="algo-card-title">${t}</div>${c}</div>`}flex(c){return`<div class="algo-flex">${c}</div>`}grid(c){return`<div class="algo-grid">${c}</div>`}alert(m,s='info'){return`<div class="algo-alert ${s}">${m}</div>`}divider(){return'<div class="algo-divider"></div>'}avatar(t){return`<div class="algo-avatar">${t}</div>`}tag(t){return`<span class="algo-tag">${t}</span>`}table(h,r){let s='<table class="algo-table"><tr>'+h.map(x=>`<th>${x}</th>`).join('')+'</tr>';r.forEach(row=>{s+='<tr>'+row.map(x=>`<td>${x}</td>`).join('')+'</tr>'});return s+'</table>'}ck(id){if(this.h[id]){this.ex(this.h[id]);this.ud()}}iv(id,v){this.inp[id]=v}gi(id){return this.inp[id]||''}ex(c){c.split(';').forEach(l=>{if(l.trim())this.el(l.trim(),0)})}ud(){for(const[id,info]of Object.entries(this.dc)){if(info.type==='display'&&info.link){const el=document.getElementById(id);if(el&&this.v.hasOwnProperty(info.link))el.textContent=this.fmt(this.v[info.link])}}}pm(t){return t.replace(/^### (.+)$/gm,'<h3>$1</h3>').replace(/^## (.+)$/gm,'<h2>$1</h2>').replace(/^# (.+)$/gm,'<h1>$1</h1>').replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\*(.+?)\*/g,'<em>$1</em>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/^> (.+)$/gm,'<blockquote>$1</blockquote>').replace(/^---$/gm,'<hr>').replace(/\n/g,'<br>')}gt(expr){const vm=expr.match(/[A-Z]/g);const vars=[...new Set(vm||[])].sort();if(!vars.length)return;const rows=[];for(let i=0;i<Math.pow(2,vars.length);i++){const row={};vars.forEach((v,idx)=>{row[v]=Boolean((i>>(vars.length-1-idx))&1)});let ev=expr;vars.forEach(v=>{ev=ev.replace(new RegExp(v,'g'),row[v])});ev=ev.replace(/AND/gi,'&&').replace(/OR/gi,'||').replace(/NOT/gi,'!');try{row.result=Boolean(eval(ev))}catch(e){row.result='!'}rows.push(row)}this.t.push({vars,rows,expression:expr})}run(code){this.reset();try{code.split('\n').forEach((l,i)=>{l=l.trim();if(l&&!l.startsWith('//'))this.el(l,i+1)});return{ok:true}}catch(e){return{ok:false,err:e.message}}}el(line,ln){let m;if(m=line.match(/^let\s+(\w+)\s*=\s*(.+)/)){this.v[m[1]]=this.ev(m[2]);return}if(m=line.match(/^calc\s+(\w+)\s*=\s*(.+)/)){this.v[m[1]]=this.ev(m[2]);this.v['_c_'+m[1]]=1;return}if(m=line.match(/^const\s+(\w+)\s*=\s*(.+)/)){this.c[m[1]]=this.ev(m[2]);this.v[m[1]]=this.c[m[1]];return}if(m=line.match(/^acc\s+(\w+)\s*=\s*(.+)/)){this.ac[m[1]]=this.ev(m[2]);this.v[m[1]]=this.ac[m[1]];return}if(m=line.match(/^counter\s+(\w+)\s*=\s*(.+)/)){this.ct[m[1]]=this.ev(m[2]);this.v[m[1]]=this.ct[m[1]];return}if(m=line.match(/^declare\s+(\w+)\s*=\s*(\w+)\((.*)\)/)){const[,id,type,args]=m;const a=args?this.pa(args):[];let html='';if(type==='button'){html=this.btn(a[0]||'Button',a[1]||'primary',id);this.dc[id]={type:'button'}}else if(type==='input'){html=this.inp(a[0]||'',id);this.dc[id]={type:'input'}}else if(type==='display'){html=this.disp(a[0]!==undefined?a[0]:0,a[1]||'',id);this.dc[id]={type:'display',link:null};this.v[id]=a[0]||0}this.m.push(html);return}if(m=line.match(/^on\s+(\w+)\s*\{(.+)\}/)){this.h[m[1]]=m[2].trim();return}if(m=line.match(/^link\s+(\w+)\s+to\s+(\w+)/)){if(this.dc[m[1]])this.dc[m[1]].link=m[2];return}if(m=line.match(/^(\w+)\+\+$/)){const n=m[1];if(this.ct.hasOwnProperty(n)){this.ct[n]++;this.v[n]=this.ct[n]}else if(this.v.hasOwnProperty(n))this.v[n]++;return}if(m=line.match(/^(\w+)--$/)){const n=m[1];if(this.ct.hasOwnProperty(n)){this.ct[n]--;this.v[n]=this.ct[n]}else if(this.v.hasOwnProperty(n))this.v[n]--;return}if(m=line.match(/^(\w+)\s*\+=\s*(.+)$/)){const n=m[1],val=this.ev(m[2]);if(this.ac.hasOwnProperty(n)){this.ac[n]+=val;this.v[n]=this.ac[n]}else if(this.v.hasOwnProperty(n))this.v[n]+=val;return}if(m=line.match(/^(\w+)\s*-=\s*(.+)$/)){if(this.v.hasOwnProperty(m[1]))this.v[m[1]]-=this.ev(m[2]);return}if(m=line.match(/^(\w+)\s*\*=\s*(.+)$/)){if(this.v.hasOwnProperty(m[1]))this.v[m[1]]*=this.ev(m[2]);return}if(line.startsWith('print(')){this.o.push({type:'output',value:this.fmt(this.ev(line.slice(6,-1)))});return}if(line.startsWith('markup(')){this.m.push(this.pm(String(this.ev(line.slice(7,-1)))));return}if(line.startsWith('render(')){this.m.push(String(this.ev(line.slice(7,-1))));return}if(line.startsWith('truthtable(')){this.gt(line.slice(11,-1).replace(/['"]/g,''));return}if(m=line.match(/^for\s+(\w+)\s+in\s+range\((.+?)\)\s*\{(.+)\}$/)){const a=m[2].split(',').map(x=>this.ev(x.trim()));const st=a.length===1?0:a[0],en=a.length===1?a[0]:a[1],sp=a[2]||1;for(let i=st;i<en;i+=sp){this.v[m[1]]=i;this.el(m[3].trim(),ln)}return}if(m=line.match(/^while\s+(.+?)\s*\{(.+)\}$/)){let it=0;while(this.ev(m[1])&&it<9999){this.el(m[2].trim(),ln);it++}return}if(m=line.match(/^if\s+(.+?)\s*\{(.+?)\}(?:\s*else\s*\{(.+?)\})?$/)){if(this.ev(m[1]))this.el(m[2].trim(),ln);else if(m[3])this.el(m[3].trim(),ln);return}if(m=line.match(/^(\w+)\s*=\s*(.+)$/)){if(this.v.hasOwnProperty(m[1]))this.v[m[1]]=this.ev(m[2]);return}}ev(expr){expr=expr.trim();if((expr[0]==='"'&&expr.slice(-1)==='"')||(expr[0]==="'"&&expr.slice(-1)==="'"))return expr.slice(1,-1);if(expr==='true')return true;if(expr==='false')return false;if(!isNaN(expr)&&expr!=='')return parseFloat(expr);if(expr[0]==='['&&expr.slice(-1)===']'){const inner=expr.slice(1,-1);return inner.trim()?inner.split(',').map(x=>this.ev(x.trim())):[]}if(this.v.hasOwnProperty(expr))return this.v[expr];for(const op of['AND','OR','XOR','NAND','NOR']){const re=new RegExp(`(.+?)\\s+${op}\\s+(.+)`,'i');const m=expr.match(re);if(m)return this[op](this.ev(m[1]),this.ev(m[2]))}if(expr.toUpperCase().startsWith('NOT '))return this.NOT(this.ev(expr.slice(4)));let m=expr.match(/^(\w+)\((.*)?\)$/);if(m){const[,fn,as]=m;const args=as?this.pa(as):[];const F={'AND':(a,b)=>this.AND(a,b),'OR':(a,b)=>this.OR(a,b),'NOT':a=>this.NOT(a),'XOR':(a,b)=>this.XOR(a,b),'NAND':(a,b)=>this.NAND(a,b),'NOR':(a,b)=>this.NOR(a,b),'fibonacci':n=>this.fib(n),'fib':n=>this.fib(n),'factorial':n=>this.fact(n),'fact':n=>this.fact(n),'isPrime':n=>this.isPrime(n),'primes':n=>this.primes(n),'gcd':(a,b)=>this.gcd(a,b),'lcm':(a,b)=>this.lcm(a,b),'binary':n=>(n>>>0).toString(2),'hex':n=>(n>>>0).toString(16).toUpperCase(),'sort':a=>this.sort(a),'reverse':a=>this.reverse(a),'sum':a=>this.sum(a),'avg':a=>this.avg(a),'min':(...a)=>a.length===1&&Array.isArray(a[0])?this.min(a[0]):Math.min(...a),'max':(...a)=>a.length===1&&Array.isArray(a[0])?this.max(a[0]):Math.max(...a),'len':a=>Array.isArray(a)?a.length:String(a).length,'range':(a,b,c)=>this.range(a,b,c),'mean':a=>this.mean(a),'median':a=>this.median(a),'stdev':a=>this.stdev(a),'abs':n=>Math.abs(n),'sqrt':n=>Math.sqrt(n),'pow':(a,b)=>Math.pow(a,b),'floor':n=>Math.floor(n),'ceil':n=>Math.ceil(n),'round':n=>Math.round(n),'sin':n=>Math.sin(n),'cos':n=>Math.cos(n),'tan':n=>Math.tan(n),'log':n=>Math.log(n),'random':(a,b)=>this.random(a,b),'clamp':(v,a,b)=>this.clamp(v,a,b),'upper':s=>this.upper(s),'lower':s=>this.lower(s),'contains':(a,v)=>this.contains(a,v),'unique':a=>this.unique(a),'toNumber':s=>parseFloat(s)||0,'getInput':id=>this.gi(id),'button':(t,s)=>this.btn(t,s),'input':(p,i)=>this.inp(p,i),'display':(v,s)=>this.disp(v,s),'box':(c,s)=>this.box(c,s),'badge':(t,s)=>this.badge(t,s),'progress':(v,m,s)=>this.progress(v,m,s),'card':(t,c)=>this.card(t,c),'alert':(m,s)=>this.alert(m,s),'flex':c=>this.flex(c),'grid':c=>this.grid(c),'divider':()=>this.divider(),'avatar':t=>this.avatar(t),'tag':t=>this.tag(t),'table':(h,r)=>this.table(h,r)};const f=F[fn]||F[fn.toLowerCase()];if(f)return f(...args)}if(expr.includes('==')){const p=expr.split('==');return this.ev(p[0].trim())==this.ev(p[1].trim())}if(expr.includes('!=')){const p=expr.split('!=');return this.ev(p[0].trim())!=this.ev(p[1].trim())}if(expr.includes('>=')){const p=expr.split('>=');return this.ev(p[0].trim())>=this.ev(p[1].trim())}if(expr.includes('<=')){const p=expr.split('<=');return this.ev(p[0].trim())<=this.ev(p[1].trim())}if(expr.includes('>')&&!expr.includes('>=')){const p=expr.split('>');return this.ev(p[0].trim())>this.ev(p[1].trim())}if(expr.includes('<')&&!expr.includes('<=')){const p=expr.split('<');return this.ev(p[0].trim())<this.ev(p[1].trim())}if(expr.includes('+')){return expr.split('+').map(x=>this.ev(x.trim())).reduce((a,b)=>typeof a==='string'||typeof b==='string'?String(a)+String(b):a+b)}if(expr.includes('-')&&!expr.startsWith('-')){const i=expr.lastIndexOf('-');return this.ev(expr.slice(0,i))-this.ev(expr.slice(i+1))}if(expr.includes('*')){return expr.split('*').reduce((a,p)=>a*this.ev(p.trim()),1)}if(expr.includes('/')){const p=expr.split('/');return this.ev(p[0].trim())/this.ev(p[1].trim())}if(expr.includes('%')){const p=expr.split('%');return this.ev(p[0].trim())%this.ev(p[1].trim())}return expr}pa(s){const args=[];let d=0,c='';for(const ch of s){if(ch==='('||ch==='[')d++;if(ch===')'||ch===']')d--;if(ch===','&&d===0){args.push(this.ev(c.trim()));c=''}else c+=ch}if(c.trim())args.push(this.ev(c.trim()));return args}fmt(v){if(Array.isArray(v))return'['+v.map(x=>this.fmt(x)).join(', ')+']';if(typeof v==='boolean')return v?'true':'false';if(typeof v==='number')return Number.isInteger(v)?String(v):v.toFixed(4).replace(/\.?0+$/,'');return String(v)}}
+const L=new A();const ed=document.getElementById('editor'),ln=document.getElementById('lines'),co=document.getElementById('cout'),ao=document.getElementById('aout'),to=document.getElementById('tout'),vo=document.getElementById('vout'),tabs=document.querySelectorAll('.tab');function ul(){ln.innerHTML=Array.from({length:ed.value.split('\n').length},(_,i)=>i+1).join('<br>')}ed.addEventListener('input',ul);ed.addEventListener('scroll',()=>ln.scrollTop=ed.scrollTop);tabs.forEach(t=>t.addEventListener('click',()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');document.querySelectorAll('.output-content').forEach(c=>c.classList.remove('active'));document.getElementById(t.dataset.tab).classList.add('active')}));document.querySelectorAll('.help-nav-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.help-nav-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.help-section').forEach(s=>s.classList.remove('active'));document.getElementById('help-'+btn.dataset.level).classList.add('active')})});
+function run(){const r=L.run(ed.value);co.innerHTML='';L.o.forEach(i=>{const d=document.createElement('div');d.className='console-line '+i.type;d.textContent='→ '+i.value;co.appendChild(d)});if(!r.ok)co.innerHTML+=`<div class="console-line error">✗ ${r.err}</div>`;else if(!L.o.length)co.innerHTML='<div class="console-line info">ℹ No output</div>';co.innerHTML+='<div class="console-line success">✓ Done</div>';if(L.m.length){ao.innerHTML=L.m.join('');tabs.forEach(t=>t.classList.remove('active'));document.querySelector('[data-tab="app"]').classList.add('active');document.querySelectorAll('.output-content').forEach(c=>c.classList.remove('active'));document.getElementById('app').classList.add('active')}if(L.t.length){to.innerHTML='';L.t.forEach(t=>{const el=document.createElement('table');el.className='truth-table';let h='<tr>';t.vars.forEach(v=>h+=`<th>${v}</th>`);h+=`<th>${t.expression}</th></tr>`;t.rows.forEach(row=>{h+='<tr>';t.vars.forEach(v=>h+=`<td class="${row[v]?'true':'false'}">${row[v]?'1':'0'}</td>`);h+=`<td class="${row.result?'true':'false'}">${row.result==='!'?'!':row.result?'1':'0'}</td></tr>`});el.innerHTML=h;to.appendChild(el)})}vo.innerHTML='';Object.keys(L.v).filter(k=>!k.startsWith('_')).forEach(k=>{const v=L.v[k];let t='let';if(L.c[k])t='const';else if(L.ac[k])t='acc';else if(L.ct[k])t='counter';else if(L.dc[k])t='declare';else if(L.v['_c_'+k])t='calc';const d=document.createElement('div');d.className='variable-item type-'+t;d.innerHTML=`<div><span class="var-name">${k}</span><span class="var-type">${t}</span></div><span class="var-value">${L.fmt(v)}</span>`;vo.appendChild(d)})}function clr(){ed.value='';ul();co.innerHTML='<div class="console-line info">ℹ Cleared</div>';ao.innerHTML='';to.innerHTML='';vo.innerHTML=''}document.getElementById('runBtn').onclick=run;document.getElementById('clearBtn').onclick=clr;document.getElementById('mRun')?.addEventListener('click',run);document.getElementById('mFloat')?.addEventListener('click',run);document.getElementById('mClear')?.addEventListener('click',clr);document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='Enter'){e.preventDefault();run()}});
+const EX={"hello":`print("Hello, World!")
+print("Welcome to Algolang v3.5!")`,"comments":`// Single line comment
+print("This runs")  // Inline
+// print("Ignored")`,"strings":`let greeting = "Hello"
+let name = "World"
+print(greeting + ", " + name + "!")
+print("Length: " + len(greeting))`,"numbers":`let x = 42
+let pi = 3.14159
+print("Integer: " + x)
+print("Decimal: " + pi)`,"math":`print("15 + 7 = " + (15 + 7))
+print("20 - 8 = " + (20 - 8))
+print("6 * 9 = " + (6 * 9))
+print("100 / 4 = " + (100 / 4))`,"mathfn":`print("sqrt(144) = " + sqrt(144))
+print("pow(2, 8) = " + pow(2, 8))
+print("abs(-42) = " + abs(-42))`,"concat":`let a = "Hello"
+let b = "World"
+print(a + " " + b)`,"input":`markup("# Input Demo")
+declare name = input("Your name", "n")
+declare btn = button("Greet", "primary")
+on btn { print("Hello " + getInput("n")) }`,"template":`let name = "Alice"
+let score = 95
+print("Student: " + name)
+print("Score: " + score)`,"debug":`let x = 10
+print("x = " + x)
+x = x + 5
+print("After +5: " + x)`,"varlet":`// let - Mutable variables
+let x = 10
+let y = 20
+print("x = " + x)
+x = 15
+print("x changed: " + x)`,"varconst":`// const - Constants
+const PI = 3.14159
+const GRAVITY = 9.81
+print("PI = " + PI)
+print("GRAVITY = " + GRAVITY)`,"varcalc":`// calc - Calculated
+let width = 10
+let height = 5
+calc area = width * height
+print("Area: " + area)`,"varacc":`// acc - Accumulators
+acc total = 0
+total += 10
+total += 25
+print("Total: " + total)`,"varcounter":`// counter - Counters
+counter clicks = 0
+clicks++
+clicks++
+clicks--
+print("Clicks: " + clicks)`,"alltypes":`let mutable = 100
+const FIXED = 999
+calc computed = mutable * 2
+acc sum = 0
+counter n = 0
+print("let: " + mutable)
+print("const: " + FIXED)
+print("calc: " + computed)
+sum += 50
+n++
+print("acc: " + sum)
+print("counter: " + n)`,"scope":`let global = 100
+for i in range(3) { print("i: " + i) }
+print("global: " + global)`,"swap":`let a = 10
+let b = 20
+print("Before: a=" + a + " b=" + b)
+let temp = a
+a = b
+b = temp
+print("After: a=" + a + " b=" + b)`,"forloop":`print("0 to 4:")
+for i in range(5) { print(i) }`,"forrange":`print("range(5):")
+for i in range(5) { print(i) }
+print("")
+print("range(0,10,2):")
+for i in range(0,10,2) { print(i) }`,"whileloop":`let x = 0
+while x < 5 { print(x); x += 1 }`,"ifelse":`let score = 85
+if score >= 90 { print("A") }
+if score >= 80 { print("B or better") }
+if score >= 60 { print("Pass") } else { print("Fail") }`,"nested":`for i in range(1,4) { for j in range(1,4) { print(i + "x" + j + "=" + (i*j)) } }`,"patterns":`for i in range(1,6) { acc line = ""; for j in range(i) { line += "*" }; print(line) }`,"fizzbuzz":`for i in range(1,16) { if i % 15 == 0 { print("FizzBuzz") }; if i % 3 == 0 { if i % 5 != 0 { print("Fizz") } }; if i % 5 == 0 { if i % 3 != 0 { print("Buzz") } }; if i % 3 != 0 { if i % 5 != 0 { print(i) } } }`,"collatz":`let n = 27
+counter steps = 0
+while n != 1 { print(n); if n % 2 == 0 { n = n / 2 } else { n = 3 * n + 1 }; steps++ }
+print("Steps: " + steps)`,"arrays":`let nums = [5, 2, 8, 1, 9]
+print("Array: " + nums)
+print("Length: " + len(nums))
+print("Sum: " + sum(nums))`,"arrayops":`let nums = [64, 34, 25, 12]
+print("Original: " + nums)
+print("Sorted: " + sort(nums))
+print("Reversed: " + reverse(nums))`,"sorting":`let data = [5, 1, 9, 3, 7]
+print("Unsorted: " + data)
+print("Sorted: " + sort(data))`,"searching":`let arr = [10, 20, 30, 40]
+print("Contains 30: " + contains(arr, 30))
+print("Contains 99: " + contains(arr, 99))`,"stats":`let data = [23, 45, 67, 12, 89]
+print("Mean: " + mean(data))
+print("Median: " + median(data))
+print("Stdev: " + stdev(data))`,"filter":`let nums = [1, 2, 2, 3, 3, 3]
+print("Original: " + nums)
+print("Unique: " + unique(nums))`,"transform":`let a = [1, 2, 3, 4, 5]
+print("Original: " + a)
+print("Reversed: " + reverse(a))`,"matrix":`let row1 = [1, 2, 3]
+let row2 = [4, 5, 6]
+print("Row 1: " + row1)
+print("Row 2: " + row2)`,"fib":`for i in range(0, 12) { print("fib(" + i + ") = " + fibonacci(i)) }`,"factorial":`for i in range(0, 8) { print(i + "! = " + factorial(i)) }`,"primes":`print("Primes to 50:")
+print(primes(50))`,"gcd":`print("GCD(48,18) = " + gcd(48, 18))
+print("LCM(4,6) = " + lcm(4, 6))`,"binary":`for i in range(0, 16) { print(i + " = " + binary(i) + " = " + hex(i)) }`,"pascal":`for n in range(0, 6) { acc row = ""; for k in range(n + 1) { row += " " + (factorial(n) / (factorial(k) * factorial(n - k))) }; print(row) }`,"power":`for i in range(0, 11) { print("2^" + i + " = " + pow(2, i)) }`,"digits":`let num = 12345
+acc digitSum = 0
+let n = num
+while n > 0 { digitSum += n % 10; n = floor(n / 10) }
+print("Digit sum of " + num + ": " + digitSum)`,"bool":`let a = true
+let b = false
+print("AND: " + AND(a,b))
+print("OR: " + OR(a,b))
+print("NOT: " + NOT(a))
+print("XOR: " + XOR(a,b))`,"gates":`print("AND: T AND T = " + AND(true,true))
+print("OR: T OR F = " + OR(true,false))
+print("XOR: T XOR F = " + XOR(true,false))
+print("NOT: NOT T = " + NOT(true))`,"truth":`truthtable("A AND B")
+truthtable("A OR B")`,"demorgan":`truthtable("NOT (A AND B)")
+truthtable("NOT (A OR B)")`,"xor":`truthtable("A XOR B")`,"nand":`truthtable("A NAND B")`,"buttons":`markup("# Buttons")
+render(flex(button("Primary","primary")+button("Success","success")+button("Danger","danger")))
+render(flex(button("Large","primary large")+button("Small","primary small")))`,"inputs":`markup("# Inputs")
+render(input("Text","t1"))
+render(flex(input("Search","s") + button("Go","primary")))`,"badges":`markup("# Badges")
+render(flex(badge("New","success")+badge("Hot","danger")+badge("Pro","purple")+badge("VIP","pink")))`,"progress":`markup("# Progress")
+render(progress(25, 100))
+render(progress(50, 100, "success"))
+render(progress(75, 100, "rainbow"))`,"cards":`markup("# Cards")
+render(card("Welcome", "Card content"))
+render(card("Stats", flex(badge("1k","primary")+badge("450","success"))))`,"boxes":`markup("# Boxes")
+render(box("Default"))
+render(box("Accent","accent"))
+render(box("Success","success"))`,"alerts":`markup("# Alerts")
+render(alert("Info","info"))
+render(alert("Success!","success"))
+render(alert("Warning!","warning"))`,"tables":`markup("# Tables")
+render(table(["Name","Age"],[["Alice","28"],["Bob","35"]]))`,"counter":`markup("# Counter")
+counter score = 0
+declare disp = display(0)
+link disp to score
+declare add = button("+1", "success large")
+declare sub = button("-1", "danger large")
+declare reset = button("Reset", "dark")
+on add { score++ }
+on sub { score-- }
+on reset { score = 0 }`,"clicker":`markup("# Clicker")
+counter clicks = 0
+counter multi = 1
+declare disp = display(0)
+link disp to clicks
+declare click = button("CLICK!", "success large")
+declare x2 = button("2x (10)", "purple")
+on click { clicks += multi }
+on x2 { if clicks >= 10 { clicks -= 10; multi *= 2 } }`,"calc":`markup("# Calculator")
+let result = 0
+declare disp = display(0)
+link disp to result
+declare n1 = input("First", "a")
+declare n2 = input("Second", "b")
+declare add = button("+", "primary")
+declare sub = button("-", "warning")
+on add { result = toNumber(getInput("a")) + toNumber(getInput("b")) }
+on sub { result = toNumber(getInput("a")) - toNumber(getInput("b")) }`,"quiz":`markup("# Math Quiz")
+let a = random(1, 12)
+let b = random(1, 12)
+let correct = a + b
+let result = 0
+markup("What is " + a + " + " + b + "?")
+declare ans = input("Answer", "ans")
+declare check = button("Check", "primary")
+declare disp = display("?")
+link disp to result
+on check { if toNumber(getInput("ans")) == correct { result = 1 } else { result = 0 } }
+render(box("1=Correct 0=Wrong","accent"))`,"dice":`markup("# Dice Roller")
+let roll = 0
+declare disp = display("?", "large")
+link disp to roll
+declare d6 = button("D6", "success")
+declare d20 = button("D20", "danger")
+on d6 { roll = random(1,6) }
+on d20 { roll = random(1,20) }`,"rps":`markup("# Rock Paper Scissors")
+let result = 0
+declare disp = display("?")
+link disp to result
+declare rock = button("Rock", "primary")
+declare paper = button("Paper", "success")
+on rock { let cpu = random(1,3); if cpu == 1 { result = 0 }; if cpu == 2 { result = -1 }; if cpu == 3 { result = 1 } }
+on paper { let cpu = random(1,3); if cpu == 1 { result = 1 }; if cpu == 2 { result = 0 }; if cpu == 3 { result = -1 } }
+render(box("1=Win 0=Tie -1=Lose","accent"))`,"rpg":`markup("# Mini RPG")
+counter hp = 100
+counter gold = 0
+counter atk = 10
+let enemy = 50
+declare hpDisp = display(100, "success")
+declare enemyDisp = display(50, "danger")
+link hpDisp to hp
+link enemyDisp to enemy
+render(flex(badge("HP","success")+badge("Enemy","danger")))
+declare attack = button("Attack", "danger")
+declare heal = button("Heal (10g)", "success")
+on attack { enemy -= atk; if enemy <= 0 { gold += 25; enemy = 50 }; hp -= random(5,15) }
+on heal { if gold >= 10 { gold -= 10; hp += 30 } }`,"pet":`markup("# Virtual Pet")
+counter hunger = 50
+counter happy = 50
+declare hDisp = display(50, "warning")
+declare happyDisp = display(50, "success")
+link hDisp to hunger
+link happyDisp to happy
+render(flex(badge("Hunger","warning")+badge("Happy","success")))
+declare feed = button("Feed", "warning")
+declare play = button("Play", "success")
+on feed { hunger = clamp(hunger + 20, 0, 100) }
+on play { happy = clamp(happy + 15, 0, 100) }`,"shop":`markup("# Shop")
+counter coins = 100
+counter items = 0
+declare coinDisp = display(100, "warning")
+link coinDisp to coins
+declare buy = button("Buy (30)", "primary")
+on buy { if coins >= 30 { coins -= 30; items++ } }`,"idle":`markup("# Idle Game")
+counter money = 0
+counter rate = 1
+declare moneyDisp = display(0, "success")
+link moneyDisp to money
+declare earn = button("Earn", "success")
+declare upgrade = button("Upgrade (50)", "warning")
+on earn { money += rate }
+on upgrade { if money >= 50 { money -= 50; rate += 1 } }`,"slots":`markup("# Slots")
+counter coins = 100
+declare coinDisp = display(100, "warning")
+link coinDisp to coins
+declare spin = button("SPIN (5)", "success large")
+on spin { if coins >= 5 { coins -= 5; let s1 = random(1,5); let s2 = random(1,5); let s3 = random(1,5); if s1 == s2 { if s2 == s3 { coins += 100 } } } }
+render(box("Match 3 = 100!","accent"))`,"tasks":`markup("# Tasks")
+counter total = 0
+counter done = 0
+declare totalDisp = display(0, "warning")
+declare doneDisp = display(0, "success")
+link totalDisp to total
+link doneDisp to done
+declare addTask = button("Add", "primary")
+declare complete = button("Done", "success")
+on addTask { total++ }
+on complete { if done < total { done++ } }`,"dashboard":`markup("# Dashboard")
+render(flex(badge("Live","success")))
+render(card("Revenue", "$12,450"))
+render(progress(78, 100, "success"))
+render(table(["Metric","Value"],[["Visitors","45k"],["Revenue","$12k"]]))`,"profile":`markup("# Profile")
+render(flex(avatar("JD")))
+render(card("John Dev", "Engineer"))
+render(flex(tag("JS")+tag("Python")+tag("React")))
+render(progress(85, 100, "rainbow"))`,"weather":`markup("# Weather")
+render(flex(badge("SF","primary")))
+render(card("Temp", "72F"))
+render(table(["Day","High"],[["Mon","75"],["Tue","72"]]))`,"fitness":`markup("# Fitness")
+render(card("Steps", "8,432"))
+render(progress(84, 100, "rainbow"))
+render(table(["Activity","Cal"],[["Run","320"],["Walk","180"]]))`,"finance":`markup("# Finance")
+render(flex(badge("+5.2%","success")))
+render(card("Balance", "$24,850"))
+render(table(["Asset","Value"],[["Stocks","$15k"],["Crypto","$5k"]]))`,"social":`markup("# Social")
+render(flex(avatar("U1")+avatar("U2")))
+render(card("Followers", "1,247"))
+render(flex(badge("Posts: 89","primary")+badge("Likes: 2k","danger")))`};function ld(v){if(EX[v]){ed.value=EX[v];ul()}}document.getElementById("examples").onchange=e=>{ld(e.target.value);e.target.value=""};document.getElementById("mEx")?.addEventListener("change",e=>{ld(e.target.value);e.target.value=""});ul();</script></body></html>
