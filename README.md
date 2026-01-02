@@ -4,7 +4,7 @@
 
 ![Algolang Logo](https://img.shields.io/badge/λ-Algolang-00d9ff?style=for-the-badge&labelColor=0a0e14)
 ![Version](https://img.shields.io/badge/version-3.5-a371f7?style=for-the-badge)
-![License](https://img.shields.io/badge/license-MIT-3fb950?style=for-the-badge)
+![License](https://img.shields.io/badge/license-APACHE2.0-3fb950?style=for-the-badge)
 ![No Dependencies](https://img.shields.io/badge/dependencies-none-ff79c6?style=for-the-badge)
 
 **A beginner-friendly programming language for learning algorithms, boolean logic, and building interactive apps.**
