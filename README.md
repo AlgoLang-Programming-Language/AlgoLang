@@ -29,15 +29,8 @@
 
 ## 🚀 Quick Start
 
-### Option 1: Use Online
+### Do this
 Simply open `algolang.html` in any modern browser.
-
-### Option 2: Clone Repository
-```bash
-git clone https://github.com/yourusername/algolang.git
-cd algolang
-open algolang.html
-```
 
 ### Your First Program
 ```
